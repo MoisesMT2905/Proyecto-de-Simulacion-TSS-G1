@@ -26,7 +26,8 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 
 # Copy the bundled Spring Boot backend executable jar
-COPY --from=builder /app/backend/target/simulator-backend-1.0.0.jar app.jar
+# Copia el jar generado en el módulo backend usando el nombre fijo que configuraste
+COPY --from=builder /app/backend/target/app.jar app.jar
 
 # Define environment parameters
 ENV PORT=3000
