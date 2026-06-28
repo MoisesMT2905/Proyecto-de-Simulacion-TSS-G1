@@ -1,7 +1,7 @@
 # ==========================================
 # STAGE 1: Build the Maven Monorepo
 # ==========================================
-FROM maven:3.8.5-openjdk-17-slim AS builder
+FROM maven:3.9.6-eclipse-temurin-17 AS builder
 WORKDIR /app
 
 # Copy dependency descriptors first for caching
