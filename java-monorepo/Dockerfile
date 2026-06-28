@@ -22,7 +22,7 @@ RUN mvn clean package -DskipTests -Pproduction
 # ==========================================
 # STAGE 2: Lightweight JRE Container for Production
 # ==========================================
-FROM openjdk:17-slim
+FROM eclipse-temurin:17-jre-jammy
 WORKDIR /app
 
 # Install curl for health checking
