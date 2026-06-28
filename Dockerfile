@@ -3,6 +3,7 @@
 # ==========================================
 FROM maven:3.9.6-eclipse-temurin-17 AS builder
 WORKDIR /app
+# cache bust
 
 # Copy dependency descriptors first for caching
 COPY java-monorepo/pom.xml .
