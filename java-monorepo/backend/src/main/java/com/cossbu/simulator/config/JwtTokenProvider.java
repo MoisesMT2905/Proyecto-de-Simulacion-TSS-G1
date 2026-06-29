@@ -12,9 +12,7 @@ import java.util.Date;
 @Component
 public class JwtTokenProvider {
 
-    private final Key key = Keys.hmacShaKeyFor(
-    "SimuladorEstacionServicioCossBuTSSG1SecretKey2026!!".getBytes(java.nio.charset.StandardCharsets.UTF_8)
-    );
+    private final Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
     private final long tokenValidityInMilliseconds = 3600000; // 1 hour
 
     public String createToken(String username) {
